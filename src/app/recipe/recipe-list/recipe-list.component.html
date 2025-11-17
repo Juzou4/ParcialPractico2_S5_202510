@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    @for (recipe of recipes; track recipe.id) {
+    <div class="card p-2" style="width: 15rem; height: 33rem">
+      <img class="card-img-top" src="{{ recipe.image }}" alt="{{ recipe.nombre }}" />
+      <div class="card-body">
+          <h5 class="card-title">{{ recipe.nombre }}</h5>
+          <!-- <p class="card-text">[{{ recipe.nombre }}]</p> -->
+        <p class="card-text">[{{ recipe.porcion }}]</p>
+        <p class="card-text">[{{ recipe.tiempo }}]</p>
+        <p class="card-text">[{{ recipe.ingredientes }}]</p>
+        <p class="card-text">[{{ recipe.pasos }}]</p>
+      </div>
+    </div>
+    }
+  </div>
+</div>
