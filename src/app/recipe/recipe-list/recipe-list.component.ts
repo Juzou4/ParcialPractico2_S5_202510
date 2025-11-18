@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Recipe} from'../recipe';
-import { dataRecipes} from '../dataRecipes';
+// import { dataRecipes} from '../dataRecipes';
 import {RecipeService} from '../recipe.service';
 
 @Component({
@@ -10,7 +10,8 @@ import {RecipeService} from '../recipe.service';
   styleUrl: './recipe-list.component.css'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Array<Recipe>= [];
+  // recipes: Array<Recipe>= [];
+  recipes: Recipe[] = [];
   constructor ( private recipeService:RecipeService) {}
 //   selected: Boolean = false;
 //   selectedRecipe = Recipe
@@ -25,11 +26,11 @@ export class RecipeListComponent implements OnInit {
   //     this.recipes = recipes;
   //   });
 
-  getRecipesList(): Array<Recipe> {
-    this.recipeService.getRecipes().subscribe((data) =>{
+  getRecipesList(): void {
+    this.recipeService.getRecipes().subscribe((data) => {
       this.recipes = data;
+      console.log('Recetas cargadas:', this.recipes.length);
     });
-    return this.recipes;
   }
 
   ngOnInit () {

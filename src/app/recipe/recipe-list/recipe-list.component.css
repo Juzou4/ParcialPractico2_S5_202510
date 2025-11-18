@@ -1,5 +1,9 @@
-img {
- height: 350px;
- width: auto;
- max-width: 400px;
+
+.bg-pink {
+  background-color: #ffcce6;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
 }

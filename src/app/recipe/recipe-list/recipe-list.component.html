@@ -1,17 +1,34 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid bg-pink min-vh-100">
+  <h2 class="text-center my-3">Recetas uniandes</h2>
+
+  <div class="row justify-content-center">
     @for (recipe of recipes; track recipe.id) {
-    <div class="card p-2" style="width: 15rem; height: 33rem">
-      <img class="card-img-top" src="{{ recipe.image }}" alt="{{ recipe.nombre }}" />
-      <div class="card-body">
-          <h5 class="card-title">{{ recipe.nombre }}</h5>
-          <!-- <p class="card-text">[{{ recipe.nombre }}]</p> -->
-        <p class="card-text">[{{ recipe.porcion }}]</p>
-        <p class="card-text">[{{ recipe.tiempo }}]</p>
-        <p class="card-text">[{{ recipe.ingredientes }}]</p>
-        <p class="card-text">[{{ recipe.pasos }}]</p>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-center">
+        <div class="card p-2" style="width: 15rem; height: 33rem">
+          <img
+            class="card-img-top"
+            [src]="recipe.image"
+            [alt]="recipe.nombre"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.nombre }}</h5>
+
+            <p class="card-text">Porciones: {{ recipe.porcion }}</p>
+            <p class="card-text">Tiempo: {{ recipe.tiempo }}</p>
+            <p class="card-text">Tiempo: {{ recipe.tiempo }}</p>
+            <!-- Punto 4: #Ingredientes -->
+            <p class="card-text">
+              # Ingredientes: {{ recipe.ingredientes.length || 0 }}
+            </p>
+
+            <a
+              class="btn btn-primary btn-sm mt-2"
+              [routerLink]="['/recipe', recipe.id]"
+              >Ver la receta</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
     }
   </div>
 </div>

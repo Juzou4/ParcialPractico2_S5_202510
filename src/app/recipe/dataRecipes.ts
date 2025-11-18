@@ -1,4 +1,25 @@
-import { Recipe} from './recipe';
-export const dataRecipes =[
-    new Recipe(1,'https://www.cocinavital.mx/wp-content/uploads/2021/06/receta-de-pasta-alfredo-1200x800.jpg','Pasta Alfredo',4,'30 minutos','- 400 g de pasta fettuccine\n- 2 tazas de crema para batir\n- 1 taza de queso parmesano rallado\n- 2 cucharadas de mantequilla\n- 2 dientes de ajo picados\n- Sal y pimienta al gusto\n- Perejil picado para decorar','1. Cocina la pasta fettuccine según las instrucciones del paquete hasta que esté al dente. Escurre y reserva.\n2. En una sartén grande, derrite la mantequilla a fuego medio. Agrega el ajo picado y sofríe hasta que esté fragante, aproximadamente 1 minuto.\n3. Vierte la crema para batir en la sartén y lleva a ebullición suave. Reduce el fuego y cocina a fuego lento durante 5 minutos, revolviendo ocasionalmente.\n4. Agrega el queso parmesano rallado a la salsa y mezcla hasta que se derrita y la salsa esté suave. Sazona con sal y pimienta al gusto.\n5. Incorpora la pasta cocida a la salsa Alfredo y mezcla bien para cubrir toda la pasta con la salsa.\n6. Sirve caliente, decorado con perejil picado si lo deseas.')
-]
+import { Recipe } from './recipe';
+
+export const dataRecipes: Recipe[] = [
+  {
+    id: 1,
+    nombre: 'Ensalada César',
+    image: 'assets/img/cesar.jpg',
+    porcion: 2,
+    tiempo: '15 min',
+    ingredientes: [
+      { nombre: 'lechuga romana', cantidad: 1 },
+      { nombre: 'pechuga de pollo', cantidad: 200 },
+      { nombre: 'queso parmesano', cantidad: 50 },
+      { nombre: 'crutones', cantidad: 12 },
+      { nombre: 'aderezo César', cantidad: 4 },
+    ],
+    pasos: [
+      'Lavar y trocear la lechuga',
+      'Cocinar el pollo y cortarlo en tiras',
+      'Mezclar todo',
+      'Agregar el aderezo y servir',
+    ],
+  },
+  
+];

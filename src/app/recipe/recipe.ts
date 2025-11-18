@@ -1,4 +1,4 @@
-// import {Recipe} from "./recipe";
+import { Ingrediente } from './ingrediente';
 
 export class Recipe {
     id:number;
@@ -6,10 +6,10 @@ export class Recipe {
     image: string;
     porcion: number;
     tiempo: string;
-    ingredientes: string;
-    pasos: string;
+    ingredientes: Ingrediente[];
+    pasos: string[]; 
 
-    constructor( id:number, image: string, nombre: string, porcion: number, tiempo: string, ingredientes: string, pasos: string ) {
+    constructor( id:number, image: string, nombre: string, porcion: number, tiempo: string, ingredientes: Ingrediente[], pasos: string[] ) {
         this.id = id;
         this.image =image;
         this.nombre = nombre;

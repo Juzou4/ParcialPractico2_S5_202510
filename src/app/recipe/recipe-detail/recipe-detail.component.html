@@ -1,1 +1,59 @@
-<p>recipe-detail works!</p>
+<div class="container-fluid bg-pink min-vh-100">
+  <h2 class="text-center my-3">Recetas uniandes</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-10 col-lg-8 bg-white p-4 rounded shadow-sm">
+      <p class="h3">{{ recipeDetail.nombre }}</p>
+
+      <div class="row">
+        <!-- Imagen -->
+        <div class="col-12 col-md-4 mb-3">
+          <img
+            class="img-fluid"
+            [src]="recipeDetail.image"
+            [alt]="recipeDetail.nombre"
+          />
+        </div>
+
+        <!-- Datos -->
+        <div class="col-12 col-md-8">
+          <div class="row mb-2">
+            <div class="col-6">
+              <strong>Porciones:</strong> {{ recipeDetail.porcion }}
+            </div>
+            <div class="col-6">
+              <strong>Tiempo:</strong> {{ recipeDetail.tiempo }}
+            </div>
+          </div>
+
+          <hr />
+
+          <h5>Ingredientes</h5>
+          <ul>
+            <li *ngFor="let ing of recipeDetail.ingredientes">
+              {{ ing.nombre }} - {{ ing.cantidad }}
+            </li>
+          </ul>
+
+          <p class="mt-2">
+            <strong>Ingrediente más usado:</strong>
+            {{ maxIngredientName }} ({{ maxIngredientAmount }})
+          </p>
+
+          <hr />
+
+          <h5>Pasos</h5>
+          <ol>
+            <li *ngFor="let paso of recipeDetail.pasos">
+              {{ paso }}
+            </li>
+          </ol>
+
+          <button class="btn btn-primary mt-3" (click)="goBack()">
+            Regresar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
